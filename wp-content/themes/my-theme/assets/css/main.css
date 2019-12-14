@@ -1,0 +1,102 @@
+html {
+  font-size: 62.5%;
+}
+
+body {
+  color: #333;
+
+
+}
+.header {
+    display: flex;
+    background-color: #0d7619;
+    font-size: 1.6rem;
+    color:white;
+    font-family: 
+  
+}
+.menu a{
+    text-decoration: none;
+    color: white;
+    
+}
+.menu-menu-principal-container ul {
+    list-style-type: none;
+    display: flex;
+    
+}
+.menu-menu-principal-container {
+    
+}
+
+.menu-menu-principal-container .menu-item {
+    margin-left: 1rem;
+}
+
+.header nav{
+    margin-left: auto;
+    margin-right: 1rem;
+    margin-top: 2.5rem;
+}
+
+.section-1 {
+    background-repeat: no-repeat;
+    background-size:  100%;
+    height: 50rem;
+    text-align: center;
+    
+    
+}
+
+.section-title1{
+    font-size: 2.5rem;
+    margin:0;
+    padding-top: 8rem;
+    
+}
+
+#section-title2{
+    font-size: 4rem;
+    text-transform: uppercase;
+}
+
+#section-title3{
+    font-size: 4em;
+    color: forestgreen;
+    text-transform: uppercase;
+}
+
+#bouton {
+    border-radius: 5rem;
+    font-size: 1rem;
+    background-color: #0d7619;
+    border: none;
+    text-transform: uppercase;
+    padding: 1rem 3rem 1rem 3rem;
+    text-decoration: none;
+    color: white;
+}
+
+.section-2{
+    text-align: center;
+}
+
+#section-title_sec2 {
+    text-transform: uppercase;
+    font-size: 4rem;
+}
+
+.section-text {
+    font-size: 2rem;
+    margin-bottom: 10rem;
+}
+
+.section-3 {
+    background-repeat: no-repeat;
+    background-size:  100%;
+    height: 20rem;
+    text-align: center;
+    
+    
+}
+
