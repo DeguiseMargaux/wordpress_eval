@@ -1,0 +1,104 @@
+<?php get_header(); ?>
+
+<div class="container">
+
+<?php
+if ( have_posts() ) {
+  while ( have_posts() ) {
+    /**
+     * La méthode the_post() permet de charger le post courant
+     * Un post est un type de contenu, par exemple une actualité ou une page
+     **/
+    the_post(); 
+
+    /**
+     * La méthode the_content() affiche le contenu du post en cours
+     * Il s'agit du contenu que vous avez renseigné dans le back-office
+     * Il existe d'autres méthodes, par exemple pour afficher le Titre du contenu, on peut utiliser la méthode the_title()
+     */
+    /*the_content();*/
+	  
+	  $banner_img = get_field('banner_background_image');
+	  $banner_lien = get_field('banner_register_link');
+	  /*array(3) {
+		  ["title"]=>
+		  string(25) "s'inscrire aux rencontres"
+		  ["url"]=>
+		  string(21) "https://www.google.fr"
+		  ["target"]=>
+		  string(6) "_blank"
+		}*/
+?>
+	<!-- CODE HTML-->
+	<section class="section-1" style="background-image:url(<?php echo $banner_img['url']; ?>)">
+            <div>
+                <p class="section-title"><?php the_field('banner_baseline'); ?></p>
+                <h2 class="section-txt1"><?php the_field('banner_title_brown'); ?></h2>
+                <h2 class="section-txt2"><?php the_field('banner_title_green'); ?></h2>
+                <a href="<?php echo $banner_lien['url']; ?>  " class="inscription-button"><?php echo $banner_lien['title']; ?></a>
+            </div>
+        </section>
+
+        <section class="section-2">
+            <div>
+                <h2 class="section-txt1" id="letter-spacing"><?php the_field('conference_title'); ?></h2>
+                <p class="section-title" id="section2txt"> <?php the_field('conference_title'); ?></p>
+            </div>
+        </section>
+
+        <section class="section-3">
+        </section>
+
+        <section class="section-4">
+            <h2 class="section-txt1" id="letter-spacing">au programme</h2>
+            <div class="section-4-programme">
+
+                <div class="section-4-leftpart">
+                    <h4 class="green-title"> les végétaux dans la chaîne alimentaire</h4>
+                    <ul>
+                        <li><b>8:30</b> Introduction par Christophe<br>
+                            Fondation</li>
+                        <li><b>9:00</b> Wim de Vries Wageningen University</li>
+                        <li><b>9:45</b> Benjamin Alles Paris XII University</li>
+                        <li><b>10:15</b> Armando Perez Cueto Copenhagen University</li>
+                        <li><b>10:45</b> Cofee break</li>
+                    </ul>
+                </div>
+
+                <div class="section-4-rightpart">
+                    <h4 class="green-title"> les activités de la fondation</h4><br>
+                    <ul>
+                        <li><b>11:15</b> Jacynthe Lafrenière, Lauréate du Prix de Recherche</li>
+                        <li class="no-space"><br></li>
+                        <li><b>11:35</b> Le projet EPICALIM de la Fondation</li>
+                        <li><b>12:00</b> Cérémonie du Prix de Recherche</li>
+                        <li><b>12:30</b> Lunch</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="plus">
+                <p class="inscription-button">S'inscrire aux rencontres</p>
+                <img id="img-programme" src="assets/img/programme.png" alt="image programme">
+            </div>
+
+        </section>
+	
+	<section class="section-5">
+<?php $news = new WP_Query( array('post_type' => 'post') );
+		while($news->have_posts()){
+			$news->the_post();
+			echo get_the_title();
+		}
+	  ?>
+
+        </section>
+
+	
+<?php
+  }
+}
+?>
+
+</div>
+
+<?php get_footer(); ?>

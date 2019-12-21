@@ -8,6 +8,9 @@
 function my_scripts() {
   // Chargement Google fonts Hind
   wp_enqueue_style('hind-font', 'https://fonts.googleapis.com/css?family=Hind:400,600');
+	
+// Chargement Google fonts dosis
+  wp_enqueue_style('dosis', 'https://fonts.googleapis.com/css?family=Dosis');
 
   // Chargement feuille de styles main.css
   wp_enqueue_style('my-styles', get_template_directory_uri() . '/assets/css/main.css', 1.0);
